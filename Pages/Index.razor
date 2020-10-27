@@ -1,7 +1,61 @@
 ﻿@page "/"
+<div>
+    <h1>Contact Management System</h1>
+    <div>
+        <div>
+            <h3>First Name</h3>
+            <input type="text" @bind="contactFirstName"/>
+        </div>
+        <div>
+            <h3>Last Name</h3>
+            <input type="text" @bind="contactLastName" />
+        </div>
+        <div>
+            <h3>Phone Number</h3>
+            <input type="text" @bind="contactPhoneNumber" />
+        </div>
+        <div>
+            <h3>Birth Day</h3>
+            <input type="date" @bind="contactBirthDay" />
+        </div>
+        <button @onclick="">Add Contact</button>
+    </div>
+    <div>
+        <h1>Contacts</h1>
+    </div>
+</div>
 
-<h1>Hello, world!</h1>
 
-Welcome to your new app.
+@code
+{
+    public String contactFirstName { get; set; }
+    public String contactLastName { get; set; }
+    public String contactPhoneNumber { get; set; }
+    public DateTime contactBirthDay { get; set; }
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+    public Class Contact
+    {
+
+        private guid id;
+        public string contactFirstName;
+        public string contactLastName;
+        public string contactPhoneNumber;
+        public string contactBirthDay;                
+    
+        public Contact(string firstName, string lastName, string phoneNumber, DateTime birthDay)
+        {
+            contactFirstName = firstName;
+            contactLastName = lastName;
+            contactPhoneNumber = phoneNumber;
+            contactBirthDay = birthDay;
+        }
+    }
+
+    public list<contact> contactList = new list<contact>();
+
+    public void addContact(string contactFirstName, string contactLastName, string contactPhoneNumber, DateTime contactBirthDay) 
+    {
+        
+        return;
+    }
+}
