@@ -18,7 +18,7 @@
             <h3>Birth Day</h3>
             <input type="date" @bind="contactBirthDay" />
         </div>
-        <button @onclick="">Add Contact</button>
+        <button @onclick="addContact">Add Contact</button>
     </div>
     <div>
         <h1>Contacts</h1>
@@ -55,7 +55,8 @@
 
     public void addContact(string contactFirstName, string contactLastName, string contactPhoneNumber, DateTime contactBirthDay) 
     {
-        
+        Contact newContact = new Contact(contactFirstName, contactLastName, contactPhoneNumber, contactBirthDay);
+        contactList.add(newContact);
         return;
     }
-}
+}}
